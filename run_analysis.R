@@ -21,4 +21,4 @@ names(Z) <- gsub("-Z", "", names(Z))
 HAR <- rbind(X,Y,Z)
 HAR_summarized <- HAR %>% group_by(subject_id, activity) %>%
     summarise_each(funs(mean)) 
-write.table()
+write.table(HAR_summarized, "./HAR_summarized.txt", row.names = FALSE)
